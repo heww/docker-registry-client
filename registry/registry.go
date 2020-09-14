@@ -41,7 +41,7 @@ type Registry struct {
 func New(registryURL, username, password string) (*Registry, error) {
 	transport := http.DefaultTransport
 
-	return newFromTransport(registryURL, username, password, transport, Log)
+	return newFromTransport(registryURL, username, password, transport, Quiet)
 }
 
 /*
@@ -56,7 +56,7 @@ func NewInsecure(registryURL, username, password string) (*Registry, error) {
 		},
 	}
 
-	return newFromTransport(registryURL, username, password, transport, Log)
+	return newFromTransport(registryURL, username, password, transport, Quiet)
 }
 
 /*
